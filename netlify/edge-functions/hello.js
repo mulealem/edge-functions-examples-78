@@ -1,5 +1,12 @@
+const ip = require("ip");
+
 export default async (request) => {
-  return new Response("Hello, Mars!", {
-    headers: { "content-type": "text/html" },
-  });
+  return new Response(
+    {
+      ip: ip.address(),
+    },
+    {
+      headers: { "content-type": "application/json;charset=UTF-8" },
+    }
+  );
 };
